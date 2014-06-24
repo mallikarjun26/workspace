@@ -1,0 +1,2 @@
+
+./LeadCharacterRecognition ~/src/opencv/opencv-2.4.9/data/haarcascades/haarcascade_frontalface_default.xml ~/Documents/CV/Lab\ Exam/Video/test3.avi

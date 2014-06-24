@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1397019459 source:/home/mallikarjun/workspace/CV/Lab Exam/LeadCharacterRecognition/LeadCharacterRecognition/LBP.cpp
+	"LBP.hpp"
+
+1398703152 /home/mallikarjun/workspace/CV/Lab Exam/LeadCharacterRecognition/LeadCharacterRecognition/LBP.hpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+	<climits>
+	<cmath>
+	<complex>
+	<string>
+	<fftw3.h>
+	<opencv2/opencv.hpp>
+	<opencv2/highgui/highgui.hpp>
+
+1398703916 source:/home/mallikarjun/workspace/CV/Lab Exam/LeadCharacterRecognition/LeadCharacterRecognition/LBPMain.cpp
+	<cstdio>
+	<fstream>
+	"LBP.hpp"
+
+1398703866 source:/home/mallikarjun/workspace/CV/Lab Exam/LeadCharacterRecognition/LeadCharacterRecognition/LBPTest.cpp
+	<iostream>
+	<ctime>
+	<opencv2/opencv.hpp>
+	<opencv2/highgui/highgui.hpp>
+	"LBP.hpp"
+
+1398951114 source:/home/mallikarjun/workspace/CV/Lab Exam/LeadCharacterRecognition/LeadCharacterRecognition/main.cpp
+	"opencv2/core/core.hpp"
+	"opencv2/contrib/contrib.hpp"
+	"opencv2/highgui/highgui.hpp"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/objdetect/objdetect.hpp"
+	<iostream>
+	<fstream>
+	<sstream>
+	<stdio.h>
+	<boost/lexical_cast.hpp>
+	<sys/dir.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<vector>
+	"LBP.hpp"
+	"/home/mallikarjun/src/opencv/opencv-2.4.9/modules/flann/include/opencv2/flann/flann.hpp"
+
+1397211326 /home/mallikarjun/src/opencv/opencv-2.4.9/modules/flann/include/opencv2/flann/flann.hpp
+	"opencv2/core/types_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/flann/flann_base.hpp"
+	"opencv2/flann/miniflann.hpp"
+

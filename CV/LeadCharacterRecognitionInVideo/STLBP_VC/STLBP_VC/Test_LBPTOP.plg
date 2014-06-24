@@ -1,0 +1,53 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Test_LBPTOP - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\gyzhao\LOCALS~1\Temp\RSP2A0.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/Test_LBPTOP.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"F:\Programes\STLBP\STLBP_VC\Test_LBPTOP.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\gyzhao\LOCALS~1\Temp\RSP2A0.tmp" 
+Creating temporary file "C:\DOCUME~1\gyzhao\LOCALS~1\Temp\RSP2A1.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/Test_LBPTOP.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"F:\Programes\STLBP\STLBP_VC\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\gyzhao\LOCALS~1\Temp\RSP2A1.tmp" 
+Creating temporary file "C:\DOCUME~1\gyzhao\LOCALS~1\Temp\RSP2A2.tmp" with contents
+[
+/nologo /subsystem:console /incremental:yes /pdb:"Debug/Test_LBPTOP.pdb" /debug /machine:I386 /out:"Debug/Test_LBPTOP.exe" /pdbtype:sept 
+.\Debug\StdAfx.obj
+.\Debug\Test_LBPTOP.obj
+.\cvcam.lib
+.\cvauxd.lib
+.\cxcore.lib
+.\highgui.lib
+.\cv.lib
+.\cvaux.lib
+.\cxcored.lib
+.\cvd.lib
+.\highguid.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\gyzhao\LOCALS~1\Temp\RSP2A2.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+Test_LBPTOP.cpp
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/Test_LBPTOP.bsc"  .\Debug\StdAfx.sbr .\Debug\Test_LBPTOP.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+Test_LBPTOP.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1399298521 source:/home/mallikarjun/workspace/practice/codechef/May Challenge/ChefJumping/main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<limits.h>
+	<tgmath.h>
+	"doesItFallOnWay.hpp"
+
+1399244722 source:/home/mallikarjun/workspace/practice/codechef/May Challenge/ChefJumping/doesItFallOnWay.cpp
+	<iostream>
+
+1399244727 /home/mallikarjun/workspace/practice/codechef/May Challenge/ChefJumping/doesItFallOnWay.hpp
+

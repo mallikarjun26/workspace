@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1400820047 source:/home/mallikarjun/workspace/CV/ExpressionsSequencer/ExtractFaces.cpp
+	"ExtractFaces.hpp"
+	"boost/filesystem.hpp"
+	<boost/lexical_cast.hpp>
+	"opencv2/objdetect/objdetect.hpp"
+	<fstream>
+
+1400764514 /home/mallikarjun/workspace/CV/ExpressionsSequencer/ExtractFaces.hpp
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<iostream>
+	"boost/filesystem.hpp"
+
+1402822198 source:/home/mallikarjun/workspace/CV/ExpressionsSequencer/main.cpp
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	"ExtractFaces.hpp"
+	"BuildListOfSelectedFaces.hpp"
+	"ConstructGraph.hpp"
+
+1402819962 source:/home/mallikarjun/workspace/CV/ExpressionsSequencer/BuildListOfSelectedFaces.cpp
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<iostream>
+	"boost/filesystem.hpp"
+	<dirent.h>
+	<fstream>
+
+1402482418 /home/mallikarjun/workspace/CV/ExpressionsSequencer/BuildListOfSelectedFaces.hpp
+
+1402819888 source:/home/mallikarjun/workspace/CV/ExpressionsSequencer/ConstructGraph.cpp
+	<iostream>
+
+1402822132 /home/mallikarjun/workspace/CV/ExpressionsSequencer/ConstructGraph.hpp
+

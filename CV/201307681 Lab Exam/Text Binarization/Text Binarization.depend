@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1398854285 source:/home/mallikarjun/workspace/CV/Lab Exam/Text Binarization/main.cpp
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	"/home/mallikarjun/src/opencv/opencv-2.4.9/modules/imgproc/src/precomp.hpp"
+	"/home/mallikarjun/src/opencv/opencv-2.4.9/modules/imgproc/src/gcgraph.hpp"
+	<limits>
+	<cstdio>
+
+1398854169 /home/mallikarjun/src/opencv/opencv-2.4.9/modules/imgproc/src/precomp.hpp
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/imgproc/imgproc_c.h"
+	"opencv2/core/internal.hpp"
+	<math.h>
+	<assert.h>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<limits.h>
+	<float.h>
+	"opencv2/imgproc/imgproc_tegra.hpp"
+	"_geom.h"
+
+1397211326 /home/mallikarjun/src/opencv/opencv-2.4.9/modules/imgproc/src/_geom.h
+
+1397211326 /home/mallikarjun/src/opencv/opencv-2.4.9/modules/imgproc/src/gcgraph.hpp
+

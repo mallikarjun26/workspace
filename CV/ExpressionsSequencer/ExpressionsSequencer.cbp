@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ExpressionsSequencer" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ExpressionsSequencer" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="boost_system" />
+					<Add library="boost_filesystem" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ExpressionsSequencer" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-s" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`opencv-config --cxxflags`" />
+		</Compiler>
+		<Linker>
+			<Add option="`opencv-config --ldstaticflags`" />
+		</Linker>
+		<Unit filename="BuildListOfSelectedFaces.cpp" />
+		<Unit filename="BuildListOfSelectedFaces.hpp" />
+		<Unit filename="ConstructGraph.cpp" />
+		<Unit filename="ConstructGraph.hpp" />
+		<Unit filename="ExtractFaces.cpp" />
+		<Unit filename="ExtractFaces.hpp" />
+		<Unit filename="FindEdgeWeights.cpp" />
+		<Unit filename="FindEdgeWeights.hpp" />
+		<Unit filename="lena.jpg" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

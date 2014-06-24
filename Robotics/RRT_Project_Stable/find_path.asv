@@ -1,0 +1,8 @@
+function [path] = find_path(T,links_c)
+    path=[];
+    temp=size(T);
+    index=temp(2);
+    while(index~=0)
+        path=[path T(1:links_c,index)]
+end
+
