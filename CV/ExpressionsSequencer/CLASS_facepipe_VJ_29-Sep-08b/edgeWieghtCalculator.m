@@ -42,7 +42,7 @@ function [ featureVectors ] = edgeWieghtCalculator( inputPath )
         %disp(image_1);
         [DETS_1,PTS_1,DESCS_1]=findFiducialPoints(opts,image_1{1},false);
         disp(listOfFaces{i});
-        strTemp = strcat(num2str(i), '=');
+        strTemp = strcat(num2str(i-1), '=');
         for j=1:size(DESCS_1-1) 
             strTemp = strcat(strTemp, num2str(DESCS_1(j)), ':');
         end
@@ -74,12 +74,14 @@ function [ featureVectors ] = edgeWieghtCalculator( inputPath )
     end
     
     outputFileHandler = fopen( strcat(inputPath, '/../', 'edgeWeights.txt'), 'w' );
+    strTemp =  strcat(num2str(noOfFaces), '\n');
+    fprintf(outputFileHandler, strTemp);
     edgeEnd = 1;
     for i=1:noOfFaces-1
         edgeEnd = edgeEnd + 1;
         for j=edgeEnd:noOfFaces
            euclideanDistance = pdist([featureVectors(i,:); featureVectors(j,:)]); 
-           strTemp = strcat(num2str(i), '-', num2str(j), '=', num2str(euclideanDistance), '\n');
+           strTemp = strcat(num2str(i-1), '-', num2str(j-1), '=', num2str(euclideanDistance), '\n');
            fprintf(outputFileHandler, strTemp);
         end
     end

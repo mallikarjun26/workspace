@@ -12,6 +12,8 @@ void findEdgeWeights(const string outputLocation) {
     string featureVectorsTxtName = outputLocation + "/AllFaces/featureVectors.txt";
     ifstream featureVectorHandle(featureVectorsTxtName.c_str());
     vector<string> stringVector;
+    string line;
+    int noOfVertices;
 
     if(featureVectorHandle.is_open()) {
         if(getline(featureVectorHandle, line)) {
@@ -24,7 +26,7 @@ void findEdgeWeights(const string outputLocation) {
             }
         }
 
-        while(getline(edgeWeightPtr, line)) {
+        while(getline(featureVectorHandle, line)) {
             split(stringVector, line, boost::is_any_of("^=:"));
             try {
 

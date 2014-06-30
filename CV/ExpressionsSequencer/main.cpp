@@ -3,8 +3,29 @@
 #include <opencv2/highgui/highgui.hpp>
 
 #include "ExtractFaces.hpp"
+#include "FilterFaces.hpp"
 #include "BuildListOfSelectedFaces.hpp"
 #include "ConstructGraph.hpp"
+
+void testing() {
+    // Create an IplImage object *image
+    Mat src= cvLoadImage("/home/mallikarjun/Documents/CV/ExpressionsSequencer/output/AllFaces/set_1/3669_0.jpg");
+    Mat dst;
+    Size sizeT(200,200);
+
+    resize(src, dst, sizeT);
+    const char* SRC_DISPLAY = "SRC";
+    namedWindow(SRC_DISPLAY, CV_WINDOW_AUTOSIZE);
+    const char* DST_DISPLAY = "DST";
+    namedWindow(SRC_DISPLAY, CV_WINDOW_AUTOSIZE);
+    namedWindow(DST_DISPLAY, CV_WINDOW_AUTOSIZE);
+    imshow(SRC_DISPLAY, src);
+    imshow(DST_DISPLAY, dst);
+
+    cvWaitKey(2000000);
+
+}
+
 
 int main(int argc, char *argv[])
 {
@@ -20,19 +41,16 @@ int main(int argc, char *argv[])
     const string finalFacesLocation  = argv[4];
 
     // Extract faces from the movie
-    //extractFaces(videoLocation, outputLocation, haarCascadeXML);
+    // extractFaces(videoLocation, outputLocation, haarCascadeXML);
 
-    // Cluster the faces which are similar
-
+    // Filter faces in a given range of size and make them of same size
+    //filterFaces(finalFacesLocation);
 
     // Pose alignment of the faces
 
 
     // Build the list of all selected faces
     //buildListOfSelectedFaces(finalFacesLocation);
-
-    // Find edgeWeights
-    //findEdgeWeights(outputLocation);
 
     // Build the graph out of all the facesBuildListOfSelectedFaces.cpp
     constructGraph(outputLocation);

@@ -42,8 +42,6 @@
 		<Unit filename="ConstructGraph.hpp" />
 		<Unit filename="ExtractFaces.cpp" />
 		<Unit filename="ExtractFaces.hpp" />
-		<Unit filename="FindEdgeWeights.cpp" />
-		<Unit filename="FindEdgeWeights.hpp" />
 		<Unit filename="lena.jpg" />
 		<Unit filename="main.cpp" />
 		<Extensions>

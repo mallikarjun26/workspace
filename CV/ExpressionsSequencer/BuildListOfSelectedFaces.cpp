@@ -1,4 +1,3 @@
-
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -27,9 +26,9 @@ void buildListOfSelectedFaces(const string finalFacesLocation) {
     while((dirPtr_l = readdir(dirPtr)) != NULL) {
 
         if( strcmp(dirPtr_l->d_name, ".") != 0 && strcmp(dirPtr_l->d_name, "..") != 0 ){
-            noOfFaces++;
             cout << dirPtr_l->d_name << endl;
             listOfFaces_ptr << dirPtr_l->d_name << " " << noOfFaces << endl;
+            noOfFaces++;
         }
 
     }
