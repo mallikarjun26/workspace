@@ -157,7 +157,7 @@ void constructGraph(const string outputLocation){
 
     VideoWriter outputVideo;
     //outputVideo.open(  , -1, 20, sizeT, true);
-    outputVideo.open("/home/mallikarjun/Desktop/test.avi", CV_FOURCC('D','I','V','X'), 5, Size (200, 200), true );
+    outputVideo.open("/home/mallikarjun/Desktop/test1.avi", CV_FOURCC('D','I','V','X'), 5, Size (200, 200), true );
     if (!outputVideo.isOpened())
     {
         perror("Could not open the output video for write");
