@@ -1,0 +1,70 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 04-Aug-2014
+ *      Author: mallikarjun
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <boost/algorithm/string.hpp>
+#include <boost/lexical_cast.hpp>
+#include <limits.h>
+
+using namespace std;
+using namespace boost;
+
+class Shot {
+	float min_dist=0;
+	float avg_dist;
+	float max_dist=FLT_MAX;
+	int no_edges=0;
+};
+
+int main(int argc, char *argv[]) {
+
+	if(argc != 2) {
+		cout << "Number of arguments isn't correct \n";
+		return -1;
+	}
+
+	const string EDGE_WEIGHTS_FILE = argv[1] + "/edgeWeights.txt";
+	const string SHOTS_INFO_FILE   = argv[1] + "/frameShotMap.txt";
+
+	ifstream edgeWeightsPtr(EDGE_WEIGHTS_FILE.c_str());
+	ifstream shotsInfoPtr(SHOTS_INFO_FILE.c_str());
+
+	string line;
+	vector<int> frameShotMap;
+
+	// Build data structure for shots information
+	int i=0, lastShot, frameNumber;
+	vector<string> frameShotSplit;
+	if(shotsInfoPtr.is_open()) {
+		if(getline(shotsInfoPtr, line)) {
+			split(frameShotSplit, line, is_any_of("-="))
+			lastShot = lexical_cast<int>(frameShotSplit[1]);
+			frameNumber = lexical_cast<int>(frameShotSplit[3]);
+			for(; i<lastShot; i++) {
+				frameShotMap[i] = frameNumber;
+			}
+		}
+	}
+
+	// Build the min, avg and max values within and between the shots.
+	vector<string> edgeWeightSplit;
+	int node1, node2, edgeWeight;
+	if(edgeWeightsPtr.is_open()) {
+		if(getline(edgeWeightsPtr,line)) {
+			split(edgeWeightSplit, line, is_any_of("-="));
+			node1 = lexical_cast<int>(edgeWeightSplit[0]);
+			node2 = lexical_cast<int>(edgeWeightSplit[1]);
+			edgeWeight = lexical_cast<float>(edgeWeightSplit[2]);
+
+
+		}
+	}
+}
+
+

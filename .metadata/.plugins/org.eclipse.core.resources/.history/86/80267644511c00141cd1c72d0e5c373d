@@ -1,0 +1,45 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 04-Aug-2014
+ *      Author: mallikarjun
+ */
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+
+	if(argc != 2) {
+		cout << "Number of arguments isn't correct \n";
+		return -1;
+	}
+
+	const string EDGE_WEIGHTS_FILE = argv[1] + "/edgeWeights.txt";
+	const string SHOTS_INFO_FILE   = argv[1] + "/frameShotMap.txt";
+
+	ifstream edgeWeightsPtr(EDGE_WEIGHTS_FILE.c_str());
+	ifstream shotsInfoPtr(SHOTS_INFO_FILE.c_str());
+
+	string line;
+
+	// Build data structure for shots information
+	if(shotsInfoPtr.is_open()) {
+
+
+	}
+
+
+	// Build the min, avg and max values within and between the shots.
+	if(edgeWeightsPtr.is_open()) {
+		if(getline(edgeWeightsPtr,line)) {
+
+
+		}
+	}
+
+}
+
+

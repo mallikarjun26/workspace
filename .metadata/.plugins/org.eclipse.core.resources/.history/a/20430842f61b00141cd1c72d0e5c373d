@@ -1,0 +1,24 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 04-Aug-2014
+ *      Author: mallikarjun
+ */
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+
+	if(argc != 2) {
+		cout << "Number of arguments isn't correct \n";
+		return -1;
+	}
+
+	string
+	ifstream
+}
+
+

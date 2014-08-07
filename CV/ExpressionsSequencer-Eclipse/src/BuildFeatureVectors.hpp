@@ -1,0 +1,6 @@
+#ifndef BUILDFEATUREVECTORS_HPP_INCLUDED
+#define BUILDFEATUREVECTORS_HPP_INCLUDED
+
+void buildFeatureVectors(const string outputLocation);
+
+#endif // BUILDLISTOFSELECTEDFACES_HPP_INCLUDED

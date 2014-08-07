@@ -1,0 +1,126 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 04-Aug-2014
+ *      Author: mallikarjun
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <boost/algorithm/string.hpp>
+#include <boost/lexical_cast.hpp>
+#include <limits.h>
+#include <map>
+
+using namespace std;
+using namespace boost;
+
+class Shot {
+	float min_dist=0;
+	float avg_dist;
+	float max_dist=FLT_MAX;
+	int no_edges=0;
+};
+
+int main(int argc, char *argv[]) {
+
+	if(argc != 2) {
+		cout << "Number of arguments isn't correct \n";
+		return -1;
+	}
+
+	const string LIST_OF_FACES_FILE = argv[1] + "/ListOfFaces.txt";
+	const string EDGE_WEIGHTS_FILE = argv[1] + "/edgeWeights.txt";
+	const string SHOTS_INFO_FILE   = argv[1] + "/frameShotMap.txt";
+
+	ifstream edgeWeightsPtr(EDGE_WEIGHTS_FILE.c_str());
+	ifstream shotsInfoPtr(SHOTS_INFO_FILE.c_str());
+	ifstream listOfFacesPtr(LIST_OF_FACES_FILE.c_str());
+
+	string line;
+	vector<int> frameShotMap;
+	map<int, map<int, Shot> > shotsNetwork;
+	vector<int> nodeFrameMap;
+
+	// Actual frame number map
+	vector<string> frameMapSplit;
+	if(listOfFacesPtr.is_open()) {
+		if(getline(listOfFacesPtr, line)) {
+			split(frameMapSplit, line, is_any_of("_ "));
+			int frameNo  = lexical_cast<int>(frameMapSplit[0]);
+			int node     = lexical_cast<int>(frameMapSplit[2]);
+			nodeFrameMap[node] = frameNo;
+		}
+	}
+
+	// Build data structure for shots information
+	int i=0, lastShot, shotNumber;
+	vector<string> frameShotSplit;
+	if(shotsInfoPtr.is_open()) {
+		if(getline(shotsInfoPtr, line)) {
+			split(frameShotSplit, line, is_any_of("-="))
+			lastShot = lexical_cast<int>(frameShotSplit[1]);
+			shotNumber = lexical_cast<int>(frameShotSplit[3]);
+			for(; i<lastShot; i++) {
+				frameShotMap[i] = shotNumber;
+			}
+		}
+	}
+
+	// Build the min, avg and max values within and between the shots.
+	vector<string> edgeWeightSplit;
+	int node1, node2;
+	float edgeWeight;
+	int frame1, frame2;
+	int shot1, shot2;
+	if(edgeWeightsPtr.is_open()) {
+		if(getline(edgeWeightsPtr,line)) {
+			split(edgeWeightSplit, line, is_any_of("-="));
+			node1  = lexical_cast<int>(edgeWeightSplit[0]);
+			node2  = lexical_cast<int>(edgeWeightSplit[1]);
+			frame1 = nodeFrameMap[node1];
+			frame2 = nodeFrameMap[node2];
+			edgeWeight = lexical_cast<float>(edgeWeightSplit[2]);
+
+			if(frameShotMap[frame1] < frameShotMap[frame2]) {
+				shot1 = frameShotMap[frame1];
+				shot2 = frameShotMap[frame2];
+			}
+			else {
+				shot1 = frameShotMap[frame2];
+				shot2 = frameShotMap[frame1];
+			}
+
+			// Mapping Shot of Shot info. First level shot number is less than or equal to second level shot number
+			if(shot1 == shot2) { // Frames from same shot
+				if(shotsNetwork.find(shot1) != shotsNetwork.end()){ // outer map is present
+					if(shotsNetwork[shot1].find(shot1) != shotsNetwork[shot1].end() ) { // Inner map also present
+						map<int, Shot> tempShotMap = shotsNetwork[shot1];
+						Shot tempShot = tempShotMap[node1];
+						if(tempShot.min_dist > edgeWeight) // min value
+							tempShot.min_dist = edgeWeight;
+						if(tempShot.max_dist < edgeWeight) // min value
+							tempShot.max_dist = edgeWeight;
+						tempShot.avg_dist += edgeWeight;
+					}
+					else { // Inner map isn't there
+						map<int, Shot> tempShotMap;
+						Shot tempShot;
+						tempShot.min_dist = edgeWeight;
+						tempShot.avg_dist = edgeWeight;
+						tempShot.max_dist = edgeWeight;
+						shotsNetwork[shot1] = tempShotMap;
+					}
+				}
+
+			}
+			else {
+
+			}
+
+		}
+	}
+}
+
+

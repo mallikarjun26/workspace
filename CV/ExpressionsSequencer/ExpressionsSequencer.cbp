@@ -42,6 +42,8 @@
 		<Unit filename="ConstructGraph.hpp" />
 		<Unit filename="ExtractFaces.cpp" />
 		<Unit filename="ExtractFaces.hpp" />
+		<Unit filename="FilterFaces.cpp" />
+		<Unit filename="FilterFaces.hpp" />
 		<Unit filename="lena.jpg" />
 		<Unit filename="main.cpp" />
 		<Extensions>

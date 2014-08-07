@@ -1,0 +1,27 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 04-Aug-2014
+ *      Author: mallikarjun
+ */
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+
+	if(argc != 2) {
+		cout << "Number of arguments isn't correct \n";
+		return -1;
+	}
+
+	const string EDGE_WEIGHTS_FILE = argv[1] + "/edgeWeights.txt";
+
+	ifstream edgeWeightsPtr(EDGE_WEIGHTS_FILE.c_str());
+
+
+}
+
+
